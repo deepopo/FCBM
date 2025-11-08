@@ -1,6 +1,6 @@
 # FCBM README
 
-This is an implementation of the paper **Flexible Concept Bottleneck Model** (FCBM).  
+This is an implementation of the AAAI 2026 paper **Flexible Concept Bottleneck Model** (FCBM).  
 
 ![FCBM Pipeline.](./images/pipeline.png)
 
@@ -23,6 +23,18 @@ python main_vlm.py -d cifar10
 ## Visualizations
 ![Zero-shot Generalization.](./images/visualization.png)
 *Figure 2*: Zero-shot Generalization in terms of concepts. We test the accuracy of FCBM with three groups of concepts, including the trained, the DeepSeek-V3-generated, and the GPT-4o-generated concepts across five datasets using ResNet50 and ViT-L/14 backbones.
+
+## Citations
+If you find our paper/code useful in your research, please cite
+
+```
+@inproceedings{du2026flexible,
+  title={Flexible Concept Bottleneck Model},
+  author={Du, Xingbo and Dou, Qiantong and Fan, Lei and Zhang, Rui},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2026}
+}
+```
 
 ## Directory
 
