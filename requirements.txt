@@ -1,0 +1,15 @@
+ftfy==6.3.1
+matplotlib==3.10.3
+numpy==2.2.5
+omegaconf==2.3.0
+openai==1.78.1
+Pillow==11.2.1
+# pytorch_lightning==2.3.3
+pytorchcv==0.0.73
+regex==2024.11.6
+Requests==2.32.3
+sentence_transformers==4.1.0
+setuptools==75.8.0
+# torch==2.4.0+cu118
+# torchvision==0.19.0+cu118
+tqdm==4.67.1

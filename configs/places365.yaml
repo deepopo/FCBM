@@ -1,0 +1,42 @@
+base:
+  seed: 0
+  model_name: FCBM
+  max_epochs: 500
+  dataset: places365
+  log_dir: logs/
+  clip_name: ViT-L/14 # [ViT-B/16, ViT-L/14]
+  backbone: clip_ViT-L/14 # [clip_RN50, clip_ViT-L/14]
+  concept_mode: both # [train, test, both, none]
+  hyper_mode: both # [train, test, both, none]
+  # [example] ckpt_path: logs/FCBM_places365_ViT-L-14_clip_ViT-L-14_seed0_label.log/version_0/checkpoints/best-epoch=xxxx.ckpt
+  # [example] ckpt_path: None
+  ckpt_path: None
+  patience: 10000 # no early stopping
+  check_val_every_n_epoch: 10
+  proj_batch_size: 50000
+  hyper_batch_size: 50000
+
+data:
+  clip_cutoff: 0.0
+  feature_layer: layer4
+  activation_batch_size: 512
+  save_dir: saves/
+  num_workers: 6
+
+model:
+  sparse: True
+  train_concept_prop: 1.
+  test_zero_shot: False
+  act_thred: 30
+  decay_rate: 0.92
+  concept_lr: 0.001
+  hyper_lr: 0.001
+  backbone_config:
+    target: models.vlm_fcbm.VLMConceptFCBM
+    params:
+      target_features_dim: 768 # {'clip_RN50': 10248, 'ViT-L-14': 768]
+  hyper_config:
+    target: models.vlm_fcbm.VLMHyperFCBM
+    params:
+      text_features_dim: 768 # {'ViT-B/16': 512, 'ViT-L-14': 768]
+      init_scale_factor: 0.1
